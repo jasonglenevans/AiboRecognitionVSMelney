@@ -715,7 +715,7 @@ position: absolute; top: 50%; left: 50%; margin-left: -463.333px; margin-top: -3
 				}catch(e){}
 			}
 		};
-		
+		window.uibarvis = true;
 		//back to project.
 		vm.runtime.emitProjectLoaded = function () {
 				//will run whenever the project finishes loading.
@@ -726,13 +726,14 @@ position: absolute; top: 50%; left: 50%; margin-left: -463.333px; margin-top: -3
 					cvs.hidden = false;
 					document.getElementById("projectstarticon").onclick = function () {
 						vm.greenFlag();
-						document.getElementById("UiBar").hidden = (!(false));
+						document.getElementById("UiBar").hidden = (!(uibarvis));
 						document.getElementById("projectstarticon").hidden = true;
 					}
 				} else {
 					vm.greenFlag();
 					document.getElementById("projectstarticon").hidden = true;
 					cvs.hidden = false;
+					document.getElementById("UiBar").hidden = (!(uibarvis));
 					document.getElementById("loadingText").hidden = true;
 				}
 				vm.setCloudProvider(gvbvdxxCloudProvider); //set my cloud provider to it.
